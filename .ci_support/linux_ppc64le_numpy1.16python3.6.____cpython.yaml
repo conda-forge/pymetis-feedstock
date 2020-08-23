@@ -8,9 +8,13 @@ cxx_compiler_version:
 - '8'
 docker_image:
 - condaforge/linux-anvil-ppc64le
+metis:
+- '5.1'
 numpy:
 - '1.16'
 pin_run_as_build:
+  metis:
+    max_pin: x.x
   python:
     min_pin: x.x
     max_pin: x.x
