@@ -39,7 +39,7 @@ test:
     - pytest
     - numpy
     - metis
-    - meshpy  # [unix]
+    - meshpy  # [unix and x86_64]
   source_files:
     - test
   commands:
