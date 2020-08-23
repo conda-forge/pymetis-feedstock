@@ -1,5 +1,5 @@
 {% set name = "PyMetis" %}
-{% set version = "2019.1.1" %}
+{% set version = "2020.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,13 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b611c9b937c82788c4663cde1f5c3b28cfe353aab41806fbc1d1a173c73e20e5
+  sha256: d13e262e8ee20963e898c2c473b69502661a8727904a49b33689fb4d42248555
 
 build:
-  number: 1
-  script: {{ PYTHON }} -m pip install . -vv
+  number: 0
+  script: |
+        {{ PYTHON }} ./configure.py --no-use-shipped-metis --metis-inc-dir=$PREFIX/include --metis-lib-dir=$PREFIX/lib 
+        {{ PYTHON }} -m pip install . -vv
   skip: True  # [win]
 
 requirements:
@@ -21,10 +23,12 @@ requirements:
 
   host:
     - pip
+    - metis
     - pybind11
     - python
   run:
     - python
+    - metis
     - six
 
 test:
@@ -34,12 +38,12 @@ test:
     - pip
     - pytest
     - numpy
+    - metis
     - meshpy  # [unix]
   source_files:
     - test
   commands:
-    # meshpy is not available on Windows
-    - cd test && python -m pytest  # [not win]
+    - cd test && python -m pytest
 
 about:
   home: https://github.com/inducer/pymetis
