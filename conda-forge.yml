@@ -1,4 +1,6 @@
 conda_forge_output_validation: true
 provider:
-  linux_aarch64: default
+# arm doesn't have meshpy for now
+# https://github.com/conda-forge/pymetis-feedstock/pull/3
+#  linux_aarch64: default
   linux_ppc64le: default
