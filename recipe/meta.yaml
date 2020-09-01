@@ -14,7 +14,6 @@ build:
   script: |
         {{ PYTHON }} ./configure.py --no-use-shipped-metis --metis-inc-dir=$PREFIX/include --metis-lib-dir=$PREFIX/lib 
         {{ PYTHON }} -m pip install . -vv
-  skip: True  # [win]
 
 requirements:
   build:
