@@ -11,9 +11,9 @@ channel_targets:
 cxx_compiler:
 - gxx
 cxx_compiler_version:
-- '7'
+- '9'
 docker_image:
-- condaforge/linux-anvil-aarch64
+- quay.io/condaforge/linux-anvil-aarch64
 metis:
 - '5.1'
 numpy:
@@ -29,5 +29,5 @@ python:
 target_platform:
 - linux-aarch64
 zip_keys:
-- - numpy
-  - python
+- - python
+  - numpy
