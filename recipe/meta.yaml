@@ -25,6 +25,7 @@ requirements:
     - metis
     - pybind11
     - python
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   run:
     - python
     - metis
