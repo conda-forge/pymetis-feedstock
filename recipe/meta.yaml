@@ -18,14 +18,14 @@ build:
 requirements:
   build:
     - {{ compiler('cxx') }}
-    - {{ compiler('m2w64_cxx') }}      # [win and vc<14]
-
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - pybind11
+    - python
   host:
     - pip
     - metis
     - pybind11
     - python
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   run:
     - python
     - metis
