@@ -13,7 +13,7 @@ docker_image:
 metis:
 - '5.1'
 numpy:
-- '1.21'
+- '1.19'
 pin_run_as_build:
   metis:
     max_pin: x.x
@@ -21,7 +21,7 @@ pin_run_as_build:
     min_pin: x.x
     max_pin: x.x
 python:
-- 3.10.* *_cpython
+- 3.7.* *_cpython
 target_platform:
 - linux-64
 zip_keys:
