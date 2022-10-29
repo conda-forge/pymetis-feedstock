@@ -1,5 +1,9 @@
+BUILD:
+- aarch64-conda_cos7-linux-gnu
+cdt_arch:
+- aarch64
 cdt_name:
-- cos6
+- cos7
 channel_sources:
 - conda-forge
 channel_targets:
@@ -13,17 +17,15 @@ docker_image:
 metis:
 - '5.1'
 numpy:
-- '1.19'
+- '1.20'
 pin_run_as_build:
-  metis:
-    max_pin: x.x
   python:
     min_pin: x.x
     max_pin: x.x
 python:
-- 3.8.* *_73_pypy
+- 3.9.* *_73_pypy
 target_platform:
-- linux-64
+- linux-aarch64
 zip_keys:
 - - python
   - numpy
