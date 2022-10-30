@@ -1,5 +1,5 @@
 cdt_name:
-- cos7
+- cos6
 channel_sources:
 - conda-forge
 channel_targets:
@@ -13,17 +13,15 @@ docker_image:
 metis:
 - '5.1'
 numpy:
-- '1.19'
+- '1.20'
 pin_run_as_build:
-  metis:
-    max_pin: x.x
   python:
     min_pin: x.x
     max_pin: x.x
 python:
-- 3.8.* *_73_pypy
+- 3.9.* *_cpython
 target_platform:
-- linux-ppc64le
+- linux-64
 zip_keys:
 - - python
   - numpy
