@@ -1,5 +1,5 @@
 {% set name = "PyMetis" %}
-{% set version = "2023.1" %}
+{% set version = "2023.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 779eaaaa3ddcf780ec6a4678e6e4690aff9a658a304bd4c4efb8abdd6bd0b71e
+  sha256: dc065dbb782ee5b1816341488e68eda74ffe320ae1c9efd35ee5e5d6da119a3f
 
 build:
   number: 0
@@ -29,7 +29,6 @@ requirements:
   run:
     - python
     - metis
-    - six
 
 test:
   imports:
