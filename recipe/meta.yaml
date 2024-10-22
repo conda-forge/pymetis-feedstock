@@ -27,6 +27,7 @@ requirements:
     - metis
     - pybind11
     - python
+    - setuptools
   run:
     - python
     - metis
