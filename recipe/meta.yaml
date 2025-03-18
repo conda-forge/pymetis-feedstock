@@ -44,6 +44,7 @@ test:
   source_files:
     - test
   commands:
+    - pip check
     - cd test && python -m pytest
 
 about:
