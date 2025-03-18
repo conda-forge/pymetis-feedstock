@@ -10,7 +10,7 @@ source:
   sha256: dc065dbb782ee5b1816341488e68eda74ffe320ae1c9efd35ee5e5d6da119a3f
 
 build:
-  number: 3
+  number: 4
   script: |
     {{ PYTHON }} ./configure.py --no-use-shipped-metis --metis-inc-dir=$PREFIX/include --metis-lib-dir=$PREFIX/lib
     {{ PYTHON }} -m pip install . -vv
