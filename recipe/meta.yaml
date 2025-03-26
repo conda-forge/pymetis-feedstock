@@ -11,6 +11,7 @@ source:
 
 build:
   number: 4
+  skip: true  # [py<310]
   script: |
     {{ PYTHON }} ./configure.py --no-use-shipped-metis --metis-inc-dir=$PREFIX/include --metis-lib-dir=$PREFIX/lib
     {{ PYTHON }} -m pip install . -vv
