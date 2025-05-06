@@ -12,7 +12,7 @@ source:
 build:
   number: 0
   skip: true  # [py<310]
-  script: |
+  script:
     # Need to parse MESON_ARGS to make sure meson finds the correct executables for cross-compilation.
     - $PYTHON -m build -w -n -x -Csetup-args=${MESON_ARGS// / -Csetup-args=}    # [unix]
     - $PYTHON -m pip install dist/meshpy*.whl                                   # [unix]
