@@ -14,9 +14,9 @@ build:
   skip: true  # [py<310]
   script:
     # Need to parse MESON_ARGS to make sure meson finds the correct executables for cross-compilation.
-    - $PYTHON -m build -w -n -x -Csetup-args=${MESON_ARGS// / -Csetup-args=}    # [unix]
-    - $PYTHON -m pip install dist/pymetis*.whl                                  # [unix]
-    - python -m pip install . -vv                                               # [win]
+    - $PYTHON -m build -w -n -x -Csetup-args="${MESON_ARGS// / -Csetup-args=} -Duse-shipped-metis=1"     # [unix]
+    - $PYTHON -m build -Csetup-args="-Duse-shipped-metis=1"                                              # [win]
+    - $PYTHON -m pip install dist/pymetis*.whl
 
 requirements:
   build:
