@@ -30,10 +30,11 @@ requirements:
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
   host:
+    - python
+    - pytho-build
     - pip
     - metis
     - pybind11
-    - python
     - meson-python
   run:
     - numpy
