@@ -31,7 +31,7 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - python
-    - pytho-build
+    - python-build
     - pip
     - metis
     - pybind11
