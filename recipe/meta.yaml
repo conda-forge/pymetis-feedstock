@@ -1,5 +1,5 @@
 {% set name = "PyMetis" %}
-{% set version = "2025.2" %}
+{% set version = "2025.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | lower }}-{{ version }}.tar.gz
-  sha256: 15e8e0e3c614cf75fc1e748c59577bc4e6d12cf448d8fa8a6e7e42b4bce1ad66
+  sha256: 0ce7b71e8f905293a809fd2da90248f9f2197ff40286dcba4cc835270142baf5
 
 build:
   number: 0
