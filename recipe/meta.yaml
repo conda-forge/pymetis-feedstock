@@ -13,22 +13,24 @@ build:
   number: 0
   skip: true  # [py<310]
   script: |
-    {{ PYTHON }} ./configure.py --no-use-shipped-metis --metis-inc-dir=$PREFIX/include --metis-lib-dir=$PREFIX/lib
-    {{ PYTHON }} -m pip install . -vv
+    {{ PYTHON }} -m pip install . -vv -Csetup-args="-Duse-shipped-metis=false"  
 
 requirements:
   build:
-    - {{ compiler('cxx') }}
-    - {{ stdlib("c") }}
+    - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - pybind11
-    - python
+    - pybind11                               # [build_platform != target_platform]
+    - ninja                                  # [build_platform != target_platform]
+    - meson-python                           # [build_platform != target_platform]
+    - {{ compiler('c') }}
+    - {{ stdlib("c") }}
+    - {{ compiler('cxx') }}
   host:
-    - pip
-    - metis
-    - pybind11
     - python
-    - setuptools
+    - python-build
+    - pip
+    - pybind11
+    - meson-python
   run:
     - typing_extensions >=4.5
     - python
