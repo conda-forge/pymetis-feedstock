@@ -1,16 +1,16 @@
 {% set name = "PyMetis" %}
-{% set version = "2023.1.1" %}
+{% set version = "2025.2.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: dc065dbb782ee5b1816341488e68eda74ffe320ae1c9efd35ee5e5d6da119a3f
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | lower }}-{{ version }}.tar.gz
+  sha256: 0ce7b71e8f905293a809fd2da90248f9f2197ff40286dcba4cc835270142baf5
 
 build:
-  number: 4
+  number: 0
   skip: true  # [py<310]
   script: |
     {{ PYTHON }} ./configure.py --no-use-shipped-metis --metis-inc-dir=$PREFIX/include --metis-lib-dir=$PREFIX/lib
@@ -30,6 +30,7 @@ requirements:
     - python
     - setuptools
   run:
+    - typing_extensions >=4.5
     - python
     - metis
 
