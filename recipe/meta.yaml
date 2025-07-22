@@ -29,12 +29,14 @@ requirements:
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
+    - metis
   host:
     - python
     - python-build
     - pip
     - pybind11
     - meson-python
+    - metis
   run:
     - typing_extensions >=4.5
     - python
