@@ -26,7 +26,6 @@ requirements:
     - pybind11                               # [build_platform != target_platform]
     - ninja                                  # [build_platform != target_platform]
     - meson-python                           # [build_platform != target_platform]
-    - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - metis
