@@ -42,7 +42,7 @@ requirements:
 
 test:
   imports:
-    - pymetis
+    - pymetis  # [build_platform == target_platform]
   requires:
     - pip
     - pytest
