@@ -10,7 +10,7 @@ source:
   sha256: 0ce7b71e8f905293a809fd2da90248f9f2197ff40286dcba4cc835270142baf5
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<310]
   script:
     # Need to parse MESON_ARGS to make sure meson finds the correct executables for cross-compilation.
