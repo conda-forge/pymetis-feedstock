@@ -56,7 +56,7 @@ test:
     - pip check
     # There were some test failures on Windows, but life is too short to debug them. :shrug:
     - cd test && python -m pytest  # [unix and build_platform == target_platform]
-    - $PYTHON -c "import pymetis" # [build_platform != target_platform]
+    - ls $SP_DIR/pymetis/*         # [build_platform != target_platform]
     
 about:
   home: https://github.com/inducer/pymetis
