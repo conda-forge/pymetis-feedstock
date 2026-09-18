@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | lower }}-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | lower }}-{{ version }}.tar.gz
   sha256: 79c6d56c30c6f3df7cc755617cbadcfc252a175ce4e5a59982edad0f1ab71c99
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<310]
   script:
     # Need to pass MESON_ARGS to make sure meson finds the correct executables for cross-compilation.
